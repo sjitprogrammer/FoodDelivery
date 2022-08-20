@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ld_activityScreenTitles">
+        <item>My Orders</item>
+        <item>My Profile</item>
+        <item>Delivery Address</item>
+        <item>Payment Methods</item>
+        <item>Contact us</item>
+        <item>Setting</item>
+        <item>Helps &amp; FAQs</item>
+    </string-array>
+
+    <array name="ld_activityScreenIcons">
+        <item>@drawable/bulk_document</item>
+        <item>@drawable/bulk_profile</item>
+        <item>@drawable/bulk_location</item>
+        <item>@drawable/bulk_wallet</item>
+        <item>@drawable/bulk_message</item>
+        <item>@drawable/bulk_setting</item>
+        <item>@drawable/bulk_helps</item>
+    </array>
+</resources>
