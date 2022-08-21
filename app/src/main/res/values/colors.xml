@@ -14,4 +14,6 @@
     <color name="colorTint">#F3F3F3</color>
     <color name="text_gray">#5B5B5E</color>
     <color name="text_rate">#9796A1</color>
+    <color name="text_tran">#E0E0E3</color>
+    <color name="bg_noti">#FFEB3B</color>
 </resources>

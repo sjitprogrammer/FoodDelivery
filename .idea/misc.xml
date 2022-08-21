@@ -3,15 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/flutter-projects/FoodDelivery/app/src/main/res/drawable/border_bottom.xml" value="0.173" />
         <entry key="..\:/flutter-projects/FoodDelivery/app/src/main/res/drawable/categories_bg.xml" value="0.173" />
         <entry key="..\:/flutter-projects/FoodDelivery/app/src/main/res/drawable/categories_selected_bg.xml" value="0.173" />
         <entry key="..\:/flutter-projects/FoodDelivery/app/src/main/res/drawable/custom_bg_primary.xml" value="0.173" />
         <entry key="..\:/flutter-projects/FoodDelivery/app/src/main/res/drawable/custom_bg_text.xml" value="0.173" />
         <entry key="..\:/flutter-projects/FoodDelivery/app/src/main/res/drawable/custom_button.xml" value="0.173" />
+        <entry key="..\:/flutter-projects/FoodDelivery/app/src/main/res/drawable/custom_plus.xml" value="0.173" />
+        <entry key="..\:/flutter-projects/FoodDelivery/app/src/main/res/drawable/custom_remove.xml" value="0.173" />
         <entry key="..\:/flutter-projects/FoodDelivery/app/src/main/res/drawable/filter_bg.xml" value="0.173" />
         <entry key="..\:/flutter-projects/FoodDelivery/app/src/main/res/drawable/ic_arrow_forward.xml" value="0.173" />
+        <entry key="..\:/flutter-projects/FoodDelivery/app/src/main/res/drawable/image_radius.xml" value="0.173" />
+        <entry key="..\:/flutter-projects/FoodDelivery/app/src/main/res/drawable/round_btn.xml" value="0.173" />
         <entry key="..\:/flutter-projects/FoodDelivery/app/src/main/res/drawable/search_bg.xml" value="0.173" />
+        <entry key="..\:/flutter-projects/FoodDelivery/app/src/main/res/layout/activity_cart.xml" value="0.264" />
+        <entry key="..\:/flutter-projects/FoodDelivery/app/src/main/res/layout/activity_detail.xml" value="0.23802083333333332" />
         <entry key="..\:/flutter-projects/FoodDelivery/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/flutter-projects/FoodDelivery/app/src/main/res/layout/cart_item.xml" value="0.23802083333333332" />
+        <entry key="..\:/flutter-projects/FoodDelivery/app/src/main/res/layout/cart_items.xml" value="0.23697916666666666" />
         <entry key="..\:/flutter-projects/FoodDelivery/app/src/main/res/layout/categories_item.xml" value="0.23697916666666666" />
         <entry key="..\:/flutter-projects/FoodDelivery/app/src/main/res/layout/custom_button.xml" value="0.23697916666666666" />
         <entry key="..\:/flutter-projects/FoodDelivery/app/src/main/res/layout/drawer_menu.xml" value="0.23697916666666666" />
@@ -19,6 +28,7 @@
         <entry key="..\:/flutter-projects/FoodDelivery/app/src/main/res/layout/fragment_home.xml" value="0.12552083333333333" />
         <entry key="..\:/flutter-projects/FoodDelivery/app/src/main/res/layout/item_menu.xml" value="0.23802083333333332" />
         <entry key="..\:/flutter-projects/FoodDelivery/app/src/main/res/layout/popular_item.xml" value="0.23802083333333332" />
+        <entry key="..\:/flutter-projects/FoodDelivery/app/src/main/res/menu/tab_menu.xml" value="0.23697916666666666" />
       </map>
     </option>
   </component>

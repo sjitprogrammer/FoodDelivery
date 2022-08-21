@@ -2,4 +2,11 @@
     <string name="app_name">FoodDelivery</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="see_review"><u>See Review</u></string>
+    <string name="description">Brown the beef better. Lean ground beef – I like to use 85% lean angus. Garlic – use fresh chopped. Spices – chili powder, cumin, onion powder.</string>
+    <string name="choice_of_add_on">Choice of Add On</string>
+    <string name="pepper_julienned">Pepper julienned</string>
+    <string name="baby_spinach">Baby spinach</string>
+    <string name="masroom">Masroom</string>
+    <string name="cart">Cart</string>
 </resources>

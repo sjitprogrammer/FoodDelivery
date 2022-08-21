@@ -1,7 +1,9 @@
 package com.aodev.fooddelivery.data;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.aodev.fooddelivery.DetailActivity;
 import com.aodev.fooddelivery.R;
 
 import java.util.ArrayList;
@@ -34,13 +37,17 @@ public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.Featur
     }
 
     @Override
-    public void onBindViewHolder(@NonNull FeaturedViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull FeaturedViewHolder holder, @SuppressLint("RecyclerView") int position) {
         FeaturedModel currentItem = items.get(position);
         holder.imageView.setImageResource(currentItem.getImage());
         holder.star.setText(String. valueOf(currentItem.getStar()));
         holder.name.setText(currentItem.getText());
         holder.time.setText(currentItem.getTime()+" mins");
-        holder.delivery.setText(currentItem.getDelivery()+" delivery");
+        String feeTxt = "free";
+        if(currentItem.getDelivery()>0){
+            feeTxt = "$";
+        }
+        holder.delivery.setText(feeTxt+currentItem.getDelivery()+" delivery");
 
         String[] tags = currentItem.getTags();
         holder.linearLayout.setOrientation(LinearLayout.HORIZONTAL);
@@ -57,6 +64,15 @@ public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.Featur
             textView.setBackgroundResource(R.drawable.custom_bg_text);
             holder.linearLayout.addView(textView);
         }
+
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(holder.imageView.getContext(), DetailActivity.class);
+                intent.putExtra("item_selected", items.get(position));
+                holder.imageView.getContext().startActivity(intent);
+            }
+        });
     }
 
 

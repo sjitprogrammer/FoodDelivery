@@ -1,22 +1,28 @@
 package com.aodev.fooddelivery.data;
 
-import java.util.Arrays;
 
-public class FeaturedModel {
+import java.io.Serializable;
+
+public class FeaturedModel implements Serializable {
 
     private int image;
-    private float star;
+    private double star;
     private String text;
     private String time;
-    private String delivery;
+    private double delivery;
+    private double price;
+    private String description;
     private String[] tags;
+    private int amountIncart;
 
-    public FeaturedModel(int image,float star,String text,String time,String delivery,String[] tags){
+    public FeaturedModel(int image, double star, String text, String time, double delivery, double price, String description, String[] tags){
         this.image = image;
         this.text = text;
         this.star = star;
         this.time = time;
         this.delivery = delivery;
+        this.price = price;
+        this.description = description;
         this.tags = tags;
     }
 
@@ -32,15 +38,31 @@ public class FeaturedModel {
         return tags;
     }
 
-    public float getStar() {
+    public double getStar() {
         return star;
     }
 
-    public String getDelivery() {
+    public double getDelivery() {
         return delivery;
     }
 
     public String getTime() {
         return time;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public int getAmountIncart() {
+        return amountIncart;
+    }
+
+    public void setAmountIncart(int amountIncart) {
+        this.amountIncart = amountIncart;
     }
 }

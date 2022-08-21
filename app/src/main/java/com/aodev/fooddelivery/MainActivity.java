@@ -10,12 +10,14 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aodev.fooddelivery.data.CategoriesAdapter;
@@ -51,17 +53,18 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
     private Drawable[] screenIcons;
 
     private SlidingRootNav slidingRootNav;
-    private ImageView toggle_menu;
+    private ImageView toggle_menu,nav_cart_btn;
+    private TextView notiCount;
+    private CartManager cartManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        Toolbar toolbar = findViewById(R.id.main_toolbar);
-//        setSupportActionBar(toolbar);
         toggle_menu = findViewById(R.id.toggle_menu);
-
+        nav_cart_btn = findViewById(R.id.nav_cart_btn);
+        cartManager = new CartManager(this);
+        notiCount = findViewById(R.id.noti_count_item);
         slidingRootNav = new SlidingRootNavBuilder(this)
-//                .withToolbarMenuToggle(toolbar)
                 .withDragDistance(180)
                 .withRootViewScale(0.75f)
                 .withRootViewElevation(25)
@@ -107,8 +110,8 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         ArrayList<FeaturedModel> featuredItem = new ArrayList<>();
         String[] tag1= {"Burger","Chicken","Fast Food"};
         String[] tag2= {"COFFEE","Chicken","Fast Food"};
-        featuredItem.add(new FeaturedModel(R.drawable.mask_group_2, (float) 4.5,"McDonald’s","10-15","free",tag1));
-        featuredItem.add(new FeaturedModel(R.drawable.mask_group_1, (float) 4.7,"Starbuck ","10-15","$2",tag2));
+        featuredItem.add(new FeaturedModel(R.drawable.mask_group_2,  4.5,"McDonald’s","10-15",0,9.50,"Brown the beef better. Lean ground beef – I like to use 85% lean angus. Garlic – use fresh chopped. Spices – chili powder, cumin, onion powder.",tag1));
+        featuredItem.add(new FeaturedModel(R.drawable.mask_group_1,  4.7,"Starbuck ","10-15",2,7.25,"Brown the beef better. Lean ground beef – I like to use 85% lean angus. Garlic – use fresh chopped. Spices – chili powder, cumin, onion powder.",tag2));
 
         ArrayList<PopularModel> popularModels = new ArrayList<>();
         popularModels.add(new PopularModel(R.drawable.mask_group_3,(float)5.50,"Salmon Salad"));
@@ -127,6 +130,23 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         popularAdapter = new PopularAdapter(popularModels);
         popularRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         popularRecyclerView.setAdapter(popularAdapter);
+
+        nav_cart_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplication(), CartActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        int count = cartManager.getCountItems();
+        notiCount.setText(String.valueOf(count));
     }
 
     @Override
